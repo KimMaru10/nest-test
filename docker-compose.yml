@@ -1,0 +1,15 @@
+# docker-compose.yml
+services:
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: nest-test
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 12345678
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+volumes:
+  mariadb_data:
